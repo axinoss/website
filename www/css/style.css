@@ -1072,6 +1072,10 @@ header {
     opacity: 0.8;
 }
 
+.team:focus .overlay {
+    opacity: 0.8;
+}
+
 .team .team-content {
     text-align: center;
     position: relative;
@@ -1798,6 +1802,9 @@ header {
 @media screen and (max-width: 991px){
   #about-swap-1 {
     display: none !important;
+  }
+  #about-swap-text {
+    padding-left: 15px !important;
   }
   #about-swap-2 {
     display: block !important;
