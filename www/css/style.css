@@ -5,7 +5,7 @@ Author: yaminncco
 Colors:
 	Body 		  : #868F9B
 	Headers 	: #10161A
-	Primary 	: #6195FF
+	Primary 	: #44a7d7
 	Dark      : #FCFCFF
 	Grey 		  : #F4F4F4 #FAFAFA #EEE
 
@@ -50,6 +50,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     color: #868F9B;
+    height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,7 +83,7 @@ h5 {
 }
 
 a {
-    color: #6195FF;
+    color: #44a7d7;
     text-decoration: none;
     -webkit-transition: 0.2s opacity;
     transition: 0.2s opacity;
@@ -92,11 +93,11 @@ a:hover, a:focus {
     text-decoration: none;
     outline: none;
     opacity: 0.8;
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 .main-color {
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 .white-text {
@@ -104,12 +105,12 @@ a:hover, a:focus {
 }
 
 ::-moz-selection {
-    background-color: #6195FF;
+    background-color: #44a7d7;
     color: #FFF;
 }
 
 ::selection {
-    background-color: #6195FF;
+    background-color: #44a7d7;
     color: #FFF;
 }
 
@@ -158,9 +159,27 @@ ul, ol {
     right: 0;
     bottom: 0;
     z-index: -1;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+/* parallax disabled on mobile, as it does not work with background-size: cover
+on e.g ios
+@media only screen and (min-device-width: 767px) {
+  .bg-img {
     background-attachment: fixed;
+  }
+}
+*/
+@supports (-webkit-overflow-scrolling: touch) {
+  .bg-img {
+    background-attachment: scroll;
+  }
 }
 
 .bg-img .overlay {
@@ -220,7 +239,7 @@ textarea {
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="url"]:focus, input[type="tel"]:focus, textarea:focus {
-    border-color: #6195FF;
+    border-color: #44a7d7;
     opacity: 1;
 }
 
@@ -237,7 +256,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .main-btn {
-    background: #6195FF;
+    background: #44a7d7;
     color: #FFF;
 }
 
@@ -248,8 +267,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .outline-btn {
     background: transparent;
-    color: #6195FF !important;
-    border-color: #6195FF;
+    color: #44a7d7 !important;
+    border-color: #44a7d7;
 }
 
 .main-btn:hover, .white-btn:hover, .outline-btn:hover {
@@ -291,6 +310,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     }
     #nav.nav-transparent .navbar-brand .logo {
         display: block !important;
+        max-height: 30px;
+        padding-top: 20px;
     }
 }
 
@@ -380,7 +401,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         position: absolute;
         right: -50%;
         top: 0;
-        background-color: #6195FF;
+        background-color: #44a7d7;
         width: 200px;
         -webkit-box-shadow: 0px 5px 5px -5px rgba(53, 64, 82, 0.2);
         box-shadow: 0px 5px 5px -5px rgba(53, 64, 82, 0.2);
@@ -466,12 +487,13 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         color: #FFF;
         -webkit-transition: 0.2s all;
         transition: 0.2s all;
+        font-size: 0.9em;
     }
     .main-nav>li.active {
-        border-left: 6px solid #6195FF;
+        border-left: 6px solid #44a7d7;
     }
     .main-nav li a:hover, .main-nav li a:focus {
-        background-color: #6195FF;
+        background-color: #44a7d7;
         color: #FFF;
         opacity: 1;
     }
@@ -538,22 +560,22 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .nav-collapse span, .nav-collapse span:before, .nav-collapse span:after {
-    height: 4px;
+    height: 2px;
     background: #10161A;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
 }
 
 .nav-collapse span:before {
-    -webkit-transform: translate(0%, 10px);
-    -ms-transform: translate(0%, 10px);
-    transform: translate(0%, 10px);
+    -webkit-transform: translate(0%, 6px);
+    -ms-transform: translate(0%, 6px);
+    transform: translate(0%, 6px);
 }
 
 .nav-collapse span:after {
-    -webkit-transform: translate(0%, -14px);
-    -ms-transform: translate(0%, -14px);
-    transform: translate(0%, -14px);
+    -webkit-transform: translate(0%, -8px);
+    -ms-transform: translate(0%, -8px);
+    transform: translate(0%, -8px);
 }
 
 #nav.open .nav-collapse span {
@@ -567,9 +589,9 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 #nav.open .nav-collapse span:after {
-    -webkit-transform: translateY(-4px) rotate(135deg);
-    -ms-transform: translateY(-4px) rotate(135deg);
-    transform: translateY(-4px) rotate(135deg);
+    -webkit-transform: translateY(-2px) rotate(135deg);
+    -ms-transform: translateY(-2px) rotate(135deg);
+    transform: translateY(-2px) rotate(135deg);
 }
 
 
@@ -637,7 +659,7 @@ header {
 
 .about i {
     font-size: 36px;
-    color: #6195FF;
+    color: #44a7d7;
     margin-bottom: 20px;
 }
 
@@ -741,7 +763,7 @@ header {
     -ms-transform: translateY(100%);
     transform: translateY(100%);
     opacity: 0;
-    color: #6195FF;
+    color: #44a7d7;
     margin-bottom: 5px;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
@@ -770,7 +792,7 @@ header {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-color: #6195FF;
+    background-color: #44a7d7;
     color: #FFF;
     line-height: 50px;
     text-align: center;
@@ -799,7 +821,7 @@ header {
     left: 20px;
     text-align: center;
     font-size: 32px;
-    color: #6195FF;
+    color: #44a7d7;
     border-radius: 50%;
 }
 
@@ -855,7 +877,7 @@ header {
 }
 
 .number i {
-    color: #6195FF;
+    color: #44a7d7;
     font-size: 36px;
     margin-bottom: 20px;
 }
@@ -910,7 +932,7 @@ header {
 }
 
 .pricing:hover .price-title {
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 .pricing .price {
@@ -921,7 +943,7 @@ header {
     text-align: center;
     margin: auto;
     border-radius: 50%;
-    border: 2px solid #6195FF;
+    border: 2px solid #44a7d7;
 }
 
 .pricing .price h3 {
@@ -991,7 +1013,7 @@ header {
 
 .testimonial span {
     font-size: 14px;
-    color: #6195FF;
+    color: #44a7d7;
     text-transform: uppercase;
 }
 
@@ -1048,7 +1070,6 @@ header {
 
 .team:hover .overlay {
     opacity: 0.8;
-    cursor: pointer;
 }
 
 .team .team-content {
@@ -1075,7 +1096,7 @@ header {
 }
 
 .team:hover .team-content span {
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 .team .team-social {
@@ -1092,7 +1113,7 @@ header {
     line-height: 50px;
     width: 50px;
     text-align: center;
-    background-color: #6195FF;
+    background-color: #45c2ff;
     color: #FFF;
 }
 
@@ -1126,7 +1147,7 @@ header {
 }
 
 .blog .blog-meta li i {
-    color: #6195FF;
+    color: #44a7d7;
     margin-right: 5px;
 }
 
@@ -1164,12 +1185,12 @@ header {
 
 .blog-tags a:hover {
   color: #FFF;
-  background-color: #6195FF;
+  background-color: #44a7d7;
 }
 
 .blog-tags a i {
     margin-right: 3px;
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 .blog-tags a:hover i {
@@ -1217,7 +1238,7 @@ header {
     border-radius: 3px;
     margin-left: 5px;
     color: #FFF;
-    background-color: #6195FF;
+    background-color: #44a7d7;
 }
 
 /* -- blog comments -- */
@@ -1270,11 +1291,11 @@ header {
 
 .blog-comments .media.author {
     background-color: #F4F4F4;
-    border-color: #6195FF;
-    border-bottom: 1px solid #6195FF;
+    border-color: #44a7d7;
+    border-bottom: 1px solid #44a7d7;
 }
 .blog-comments .media.author>.media-body>.media-heading {
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 .blog-comments .media.author + .media {
@@ -1332,7 +1353,7 @@ header {
     border: none;
     line-height: 40px;
     background-color: transparent;
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 /* -- category sidebar -- */
@@ -1351,11 +1372,11 @@ header {
 
 .widget-category a span {
     float: right;
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 .widget-category a:hover {
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 /* -- tags sidebar -- */
@@ -1371,7 +1392,7 @@ header {
 
 .widget-tags a:hover {
   color: #FFF;
-  background-color: #6195FF;
+  background-color: #44a7d7;
 }
 
 /* -- posts sidebar -- */
@@ -1394,7 +1415,7 @@ header {
 }
 
 .widget-post a:hover {
-    color: #6195FF;
+    color: #44a7d7;
 }
 
 .widget-post .blog-meta {
@@ -1404,12 +1425,12 @@ header {
 .widget-post .blog-meta li {
     display: inline-block;
     margin-right: 5px;
-    color: #6195FF;
+    color: #44a7d7;
     font-size: 12px;
 }
 
 .widget-post li i {
-    color: #6195FF;
+    color: #44a7d7;
     margin-right: 5px;
 }
 
@@ -1426,7 +1447,7 @@ header {
 
 .contact i {
     font-size: 36px;
-    color: #6195FF;
+    color: #44a7d7;
     margin-bottom: 20px;
 }
 
@@ -1483,7 +1504,7 @@ header {
   line-height: 50px;
   text-align: center;
   border-radius: 3px;
-  background-color: #111;
+  background-color: #44a7d7;
   color:#FFF;
 }
 
@@ -1763,4 +1784,22 @@ header {
 
 .feature i {
   margin-right: 1em;
+}
+
+@media screen and (min-width: 991px){
+  #about-swap-1 {
+    display: block !important;
+  }
+  #about-swap-2 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 991px){
+  #about-swap-1 {
+    display: none !important;
+  }
+  #about-swap-2 {
+    display: block !important;
+  }
 }
