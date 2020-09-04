@@ -1,0 +1,110 @@
+body {
+	background-color: #111;
+}
+
+#team {
+	background-color: white;
+}
+
+#footer .links-section {
+	text-align: center;
+}
+
+#footer .links-section img {
+	height: 75px;
+	margin: 20px;
+	margin-bottom: -20px;
+}
+
+.logo-top {
+  max-width: 100px;
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  top: 20px;
+  bottom: 0;
+  left: 30px;
+  right: 0;
+  z-index: 1000;
+}
+
+.img-filter {
+	filter: sepia(100%) hue-rotate(170deg) saturate(200%);
+	-webkit-filter: sepia(100%) hue-rotate(170deg) saturate(200%);
+}
+
+.img-filter-invert {
+	filter: invert() sepia(100%) hue-rotate(170deg) saturate(200%);
+	-webkit-filter: invert() sepia(100%) hue-rotate(170deg) saturate(200%);
+}
+
+.img-filter-invert-muted {
+	filter: invert() sepia(100%) hue-rotate(170deg) saturate(100%);
+	-webkit-filter: invert() sepia(100%) hue-rotate(170deg) saturate(100%);
+}
+
+.img-embed {
+	display: inline;
+	max-width: 400px;
+	margin: 20px;
+	margin-left: 0;
+}
+
+.home-image {
+	margin-bottom: 30px;
+	filter: sepia(100%) hue-rotate(170deg) saturate(400%);
+	-webkit-filter: sepia(100%) hue-rotate(170deg) saturate(400%);
+}
+
+.sub-section {
+	font-size: 0.8em;
+}
+
+.sub-section span {
+	color: white;
+}
+
+.sub-section p {
+	display: block;
+	color: #666;
+	font-size: 0.9em;
+	margin-top: 10px;
+}
+
+.row-spacer {
+	height: 50px;
+	width: 100%;
+}
+
+.feature i {
+  margin-right: 1em;
+  border-radius: 0;
+  border: none; 
+}
+
+@media screen and (max-width: 767px){
+  .logo-top {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 991px){
+  #about-swap-1 {
+    display: block !important;
+  }
+  #about-swap-2 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 991px){
+  #about-swap-1 {
+    display: none !important;
+  }
+  #about-swap-text {
+    padding-left: 15px !important;
+  }
+  #about-swap-2 {
+    display: block !important;
+  }
+}
