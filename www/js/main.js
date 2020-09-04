@@ -49,6 +49,7 @@
 
 		// Fixed nav
 		wScroll > 1 ? $('#nav').addClass('fixed-nav') : $('#nav').removeClass('fixed-nav');
+		wScroll > 1 ? $('.logo-top').fadeOut(50) : $('.logo-top').fadeIn();
 
 		// Back To Top Appear
 		wScroll > 700 ? $('#back-to-top').fadeIn() : $('#back-to-top').fadeOut();
@@ -90,6 +91,19 @@
 	///////////////////////////
 	// Owl Carousel
 	$('#about-slider3').owlCarousel({
+		items:1,
+		loop:true,
+		margin:20,
+		nav: true,
+		navText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		dots : true,
+		autoplay : true,
+		animateOut: 'fadeOut'
+	});
+
+	///////////////////////////
+	// Owl Carousel
+	$('#about-slider4').owlCarousel({
 		items:1,
 		loop:true,
 		margin:20,
