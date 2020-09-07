@@ -88,12 +88,15 @@ body {
   }
 }
 
-@media screen and (min-width: 991px){
+@media screen and (min-width: 992px){
   #about-swap-1 {
     display: block !important;
   }
   #about-swap-2 {
     display: none !important;
+  }
+  .slider-mobile {
+	  display: none !important;
   }
 }
 
@@ -107,4 +110,31 @@ body {
   #about-swap-2 {
     display: block !important;
   }
+}
+
+@media screen and (max-height: 700px) and (max-width: 450px){
+	.home-image {
+		margin-top: 15%;
+	}
+	h2 {
+		font-size: 2em;
+	}
+}
+
+@media screen and (max-height: 700px) and (max-width: 375px){
+	.home-image {
+		margin-top: 25%;
+	}
+}
+
+@media screen and (max-height: 570px) and (max-width: 320px){
+	.home-image {
+		margin-top: 50%;
+	}
+	h2 {
+		font-size: 1.5em;
+	}
+	p.white-text {
+		font-size: 0.7em !important;
+	}
 }
